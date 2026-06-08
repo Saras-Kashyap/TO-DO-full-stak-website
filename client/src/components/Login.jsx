@@ -28,7 +28,7 @@ const Login = ({ setToken, setView }) => {
   };
 
   return (
-    <div className="w-full bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] text-slate-200 transition-all duration-300">
+    <div className="w-full max-w-md bg-white/5 backdrop-blur-lg border border-white/5 rounded-3xl p-10 shadow-[0_25px_60px_rgba(99,102,241,0.08)] text-slate-200 transition-all duration-300">
       <div className="flex flex-col items-center text-center mb-8">
         <h2 className="text-3xl font-extrabold tracking-tight text-white">Welcome back</h2>
         <p className="text-sm text-slate-400 mt-2">Sign in to your SecureTask account</p>
@@ -41,7 +41,7 @@ const Login = ({ setToken, setView }) => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6 flex flex-col">
         <div className="space-y-2">
           <label htmlFor="email" className="text-xs font-semibold text-slate-400 uppercase tracking-wider pl-1">
             Email Address
@@ -53,7 +53,7 @@ const Login = ({ setToken, setView }) => {
             placeholder="name@example.com"
             value={formData.email}
             onChange={handleChange}
-            className="w-full h-12 px-4 rounded-xl border border-white/10 bg-white/5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all duration-250"
+            className="w-full h-11 px-3 bg-white/10 border-0 border-b border-white/10 focus:border-indigo-500 focus:ring-0 text-sm text-white placeholder:text-slate-500 transition-all duration-200"
             required
           />
         </div>
@@ -69,7 +69,7 @@ const Login = ({ setToken, setView }) => {
             placeholder="••••••••"
             value={formData.password}
             onChange={handleChange}
-            className="w-full h-12 px-4 rounded-xl border border-white/10 bg-white/5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all duration-250"
+            className="w-full h-11 px-3 bg-white/10 border-0 border-b border-white/10 focus:border-indigo-500 focus:ring-0 text-sm text-white placeholder:text-slate-500 transition-all duration-200"
             required
           />
         </div>
@@ -77,7 +77,7 @@ const Login = ({ setToken, setView }) => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full h-12 bg-indigo-600 text-white text-sm font-semibold rounded-full flex items-center justify-center gap-2 hover:bg-indigo-500 hover:scale-[1.02] hover:shadow-lg hover:shadow-indigo-600/10 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 cursor-pointer"
+          className="w-[85%] mx-auto h-10 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xs font-bold tracking-wide uppercase rounded-full flex items-center justify-center gap-2 hover:scale-[1.02] hover:shadow-lg hover:shadow-indigo-500/10 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 cursor-pointer mt-2"
         >
           {loading ? 'Signing in...' : 'Sign In'}
         </button>
