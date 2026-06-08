@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import api from '../api';
 
 const Login = ({ setToken, setView }) => {
@@ -28,9 +28,9 @@ const Login = ({ setToken, setView }) => {
   };
 
   return (
-    <div className="w-full max-w-md bg-white/5 backdrop-blur-lg border border-white/5 rounded-3xl p-10 shadow-[0_25px_60px_rgba(99,102,241,0.08)] text-slate-200 transition-all duration-300">
+    <div className="w-full max-w-md bg-slate-900/50 backdrop-blur-xl rounded-3xl p-12 shadow-2xl text-slate-200 transition-all duration-300">
       <div className="flex flex-col items-center text-center mb-8">
-        <h2 className="text-3xl font-extrabold tracking-tight text-white">Welcome back</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-white">Welcome back</h2>
         <p className="text-sm text-slate-400 mt-2">Sign in to your SecureTask account</p>
       </div>
 
@@ -53,7 +53,7 @@ const Login = ({ setToken, setView }) => {
             placeholder="name@example.com"
             value={formData.email}
             onChange={handleChange}
-            className="w-full h-11 px-3 bg-white/10 border-0 border-b border-white/10 focus:border-indigo-500 focus:ring-0 text-sm text-white placeholder:text-slate-500 transition-all duration-200"
+            className="w-full h-11 px-3 bg-slate-950/50 border-0 rounded-lg focus:ring-1 focus:ring-indigo-500 focus:outline-none text-sm text-white placeholder:text-slate-500 transition-all duration-200"
             required
           />
         </div>
@@ -69,7 +69,7 @@ const Login = ({ setToken, setView }) => {
             placeholder="••••••••"
             value={formData.password}
             onChange={handleChange}
-            className="w-full h-11 px-3 bg-white/10 border-0 border-b border-white/10 focus:border-indigo-500 focus:ring-0 text-sm text-white placeholder:text-slate-500 transition-all duration-200"
+            className="w-full h-11 px-3 bg-slate-950/50 border-0 rounded-lg focus:ring-1 focus:ring-indigo-500 focus:outline-none text-sm text-white placeholder:text-slate-500 transition-all duration-200"
             required
           />
         </div>
@@ -77,7 +77,7 @@ const Login = ({ setToken, setView }) => {
         <button
           type="submit"
           disabled={loading}
-          className="w-[85%] mx-auto h-10 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xs font-bold tracking-wide uppercase rounded-full flex items-center justify-center gap-2 hover:scale-[1.02] hover:shadow-lg hover:shadow-indigo-500/10 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 cursor-pointer mt-2"
+          className="w-[85%] mx-auto h-11 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xs font-bold tracking-wide uppercase rounded-full flex items-center justify-center gap-2 hover:scale-[1.02] hover:shadow-lg hover:shadow-indigo-500/30 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 cursor-pointer mt-2"
         >
           {loading ? 'Signing in...' : 'Sign In'}
         </button>
