@@ -29,17 +29,17 @@ const Login = ({ setToken, setView }) => {
   };
 
   return (
-    <div className="w-full max-w-[420px] bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-[0_25px_60px_rgba(0,0,0,0.15)] text-slate-800 transition-all duration-300">
+    <div className="w-full max-w-[420px] bg-slate-950/45 backdrop-blur-xl border border-slate-900 rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.35)] text-slate-200 transition-all duration-300">
       <div className="flex flex-col items-center text-center mb-8">
-        <div className="h-14 w-14 rounded-2xl bg-indigo-50 border border-indigo-100/80 flex items-center justify-center text-indigo-600 mb-4 shadow-sm">
+        <div className="h-14 w-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 shadow-[0_0_20px_rgba(16,185,129,0.08)]">
           <Shield className="h-7 w-7" />
         </div>
-        <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">Welcome back</h2>
+        <h2 className="text-3xl font-extrabold tracking-tight text-slate-100">Welcome back</h2>
         <p className="text-sm text-slate-500 mt-2">Sign in to your SecureTask account</p>
       </div>
 
       {error && (
-        <div className="mb-6 bg-red-50/80 border border-red-100 text-red-600 text-sm px-4 py-3.5 rounded-xl flex items-center gap-2">
+        <div className="mb-6 bg-red-950/20 border border-red-900/30 text-red-450 text-xs px-4 py-3.5 rounded-xl flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-red-500 shrink-0" />
           {error}
         </div>
@@ -61,7 +61,7 @@ const Login = ({ setToken, setView }) => {
               placeholder="name@example.com"
               value={formData.email}
               onChange={handleChange}
-              className="w-full h-12 pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50/50 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/5 transition-all duration-200"
+              className="w-full h-12 pl-11 pr-4 rounded-xl border border-slate-900 bg-slate-950/60 text-sm text-slate-100 placeholder:text-slate-650 focus:outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/5 transition-all duration-200"
               required
             />
           </div>
@@ -82,7 +82,7 @@ const Login = ({ setToken, setView }) => {
               placeholder="••••••••"
               value={formData.password}
               onChange={handleChange}
-              className="w-full h-12 pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50/50 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/5 transition-all duration-200"
+              className="w-full h-12 pl-11 pr-4 rounded-xl border border-slate-900 bg-slate-950/60 text-sm text-slate-100 placeholder:text-slate-650 focus:outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/5 transition-all duration-200"
               required
             />
           </div>
@@ -91,18 +91,18 @@ const Login = ({ setToken, setView }) => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full h-12 bg-indigo-600 text-white text-sm font-semibold rounded-xl flex items-center justify-center gap-2 hover:bg-indigo-500 hover:shadow-lg hover:shadow-indigo-600/20 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 cursor-pointer"
+          className="w-full h-12 bg-emerald-600 text-white text-sm font-semibold rounded-xl flex items-center justify-center gap-2 hover:bg-emerald-550 hover:shadow-lg hover:shadow-emerald-600/10 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 cursor-pointer border border-emerald-600/30"
         >
           {loading ? 'Signing in...' : 'Sign In'}
           {!loading && <ArrowRight className="h-4 w-4" />}
         </button>
       </form>
 
-      <div className="mt-8 text-center text-sm text-slate-500 border-t border-slate-100 pt-6">
+      <div className="mt-8 text-center text-sm text-slate-500 border-t border-slate-900/60 pt-6">
         Don't have an account?{' '}
         <button
           onClick={() => setView('register')}
-          className="text-indigo-600 font-semibold hover:underline hover:text-indigo-550 cursor-pointer"
+          className="text-emerald-400 font-semibold hover:underline hover:text-emerald-350 cursor-pointer"
         >
           Sign Up
         </button>
