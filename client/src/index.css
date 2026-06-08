@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* Global resets and baseline styles */
 :root {
   color-scheme: dark;
