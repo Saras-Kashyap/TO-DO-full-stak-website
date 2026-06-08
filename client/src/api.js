@@ -1,12 +1,19 @@
 import axios from 'axios';
 
-// Create an Axios instance with base URL for the backend API
-// const api = axios.create({
-//   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
-// });
+let baseURL = import.meta.env.VITE_API_URL || 'https://to-do-full-stak-website.onrender.com/api';
+
+// Normalize URL: remove any trailing slash
+if (baseURL.endsWith('/')) {
+  baseURL = baseURL.slice(0, -1);
+}
+
+// Automatically append /api if it is missing
+if (!baseURL.endsWith('/api')) {
+  baseURL = `${baseURL}/api`;
+}
+
 const api = axios.create({
-  // Use a fallback to ensure we know if the variable is missing
-  baseURL: import.meta.env.VITE_API_URL || 'https://to-do-full-stak-website.onrender.com/api',
+  baseURL,
 });
 
 // Request interceptor to attach JWT token to headers if it exists
