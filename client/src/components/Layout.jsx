@@ -81,8 +81,8 @@ export default function Layout({ children, currentView, setView, handleLogout })
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col items-center p-6 md:p-12 overflow-y-auto max-w-xl mx-auto w-full">
-        <div className="w-full py-4 md:py-8">
+      <main className="flex-1 flex flex-col items-center p-6 md:p-12 overflow-y-auto w-full">
+        <div className="w-full max-w-xl py-4 md:py-8">
           {children}
         </div>
       </main>

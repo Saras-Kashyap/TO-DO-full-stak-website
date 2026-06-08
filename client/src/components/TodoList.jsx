@@ -105,7 +105,7 @@ const TodoList = () => {
             disabled={addingTask}
             required
           />
-          <Button type="submit" disabled={addingTask} className="aspect-square p-2.5">
+          <Button type="submit" disabled={addingTask} size="icon" className="shrink-0 h-11 w-11">
             {addingTask ? <Loader2 className="h-4 w-4 animate-spin" /> : <Plus className="h-4 w-4" />}
           </Button>
         </form>
