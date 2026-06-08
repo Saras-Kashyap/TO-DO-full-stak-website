@@ -44,16 +44,16 @@ function App() {
 
   // Logged out View (Auth Cards)
   return (
-    <div className="app-container">
-      <header className="app-header">
-        <div className="logo-brand">
-          <span className="logo-icon">🔒</span>
-          <h1>SecureTask</h1>
+    <div className="min-h-screen w-full bg-slate-950 flex flex-col justify-between items-center py-12 px-6">
+      <header className="flex flex-col items-center text-center max-w-sm w-full mt-4">
+        <div className="flex items-center space-x-2.5 mb-2">
+          <span className="text-xl">🔒</span>
+          <h1 className="text-xl font-semibold text-slate-100 tracking-tight">SecureTask</h1>
         </div>
-        <p className="tagline">A full-stack MERN auth application</p>
+        <p className="text-xs text-slate-500">A full-stack MERN auth application</p>
       </header>
 
-      <main className="app-main">
+      <main className="flex-1 flex items-center justify-center w-full max-w-md my-8">
         {view === 'login' ? (
           <Login setToken={setToken} setView={setView} />
         ) : (
@@ -61,8 +61,8 @@ function App() {
         )}
       </main>
 
-      <footer className="app-footer-bar">
-        <p>&copy; {new Date().getFullYear()} SecureTask. Built with MongoDB, Express, React, and Node.</p>
+      <footer className="text-center text-[10px] text-slate-650 tracking-wide">
+        &copy; {new Date().getFullYear()} SecureTask. Built with MongoDB, Express, React, and Node.
       </footer>
     </div>
   );

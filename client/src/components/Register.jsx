@@ -29,13 +29,13 @@ const Register = ({ setToken, setView }) => {
   };
 
   return (
-    <div className="w-full max-w-[420px] bg-slate-950/45 backdrop-blur-xl border border-slate-900 rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.35)] text-slate-200 transition-all duration-300">
-      <div className="flex flex-col items-center text-center mb-8">
-        <div className="h-14 w-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 shadow-[0_0_20px_rgba(16,185,129,0.08)]">
+    <div className="w-full bg-slate-950/45 backdrop-blur-xl border border-slate-900 rounded-3xl p-8 sm:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.35)] text-slate-200 transition-all duration-300">
+      <div className="flex flex-col items-center text-center mb-10">
+        <div className="h-14 w-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-5 shadow-[0_0_20px_rgba(16,185,129,0.08)]">
           <Shield className="h-7 w-7" />
         </div>
         <h2 className="text-3xl font-extrabold tracking-tight text-slate-100">Create Account</h2>
-        <p className="text-sm text-slate-500 mt-2">Join SecureTask to start managing tasks</p>
+        <p className="text-sm text-slate-500 mt-2.5">Join SecureTask to start managing tasks</p>
       </div>
 
       {error && (
@@ -61,7 +61,7 @@ const Register = ({ setToken, setView }) => {
               placeholder="johndoe"
               value={formData.username}
               onChange={handleChange}
-              className="w-full h-12 pl-11 pr-4 rounded-xl border border-slate-900 bg-slate-950/60 text-sm text-slate-100 placeholder:text-slate-650 focus:outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/5 transition-all duration-200"
+              className="w-full h-12 pl-11 pr-4 rounded-xl border border-slate-900 bg-slate-950/60 text-sm text-slate-100 placeholder:text-slate-655 focus:outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/5 transition-all duration-200"
               required
             />
           </div>
@@ -82,7 +82,7 @@ const Register = ({ setToken, setView }) => {
               placeholder="name@example.com"
               value={formData.email}
               onChange={handleChange}
-              className="w-full h-12 pl-11 pr-4 rounded-xl border border-slate-900 bg-slate-950/60 text-sm text-slate-100 placeholder:text-slate-650 focus:outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/5 transition-all duration-200"
+              className="w-full h-12 pl-11 pr-4 rounded-xl border border-slate-900 bg-slate-950/60 text-sm text-slate-100 placeholder:text-slate-655 focus:outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/5 transition-all duration-200"
               required
             />
           </div>
@@ -103,7 +103,7 @@ const Register = ({ setToken, setView }) => {
               placeholder="••••••••"
               value={formData.password}
               onChange={handleChange}
-              className="w-full h-12 pl-11 pr-4 rounded-xl border border-slate-900 bg-slate-950/60 text-sm text-slate-100 placeholder:text-slate-650 focus:outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/5 transition-all duration-200"
+              className="w-full h-12 pl-11 pr-4 rounded-xl border border-slate-900 bg-slate-950/60 text-sm text-slate-100 placeholder:text-slate-655 focus:outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/5 transition-all duration-200"
               required
             />
           </div>
@@ -119,7 +119,7 @@ const Register = ({ setToken, setView }) => {
         </button>
       </form>
 
-      <div className="mt-8 text-center text-sm text-slate-500 border-t border-slate-900/60 pt-6">
+      <div className="mt-10 text-center text-sm text-slate-550 border-t border-slate-900/60 pt-6">
         Already have an account?{' '}
         <button
           onClick={() => setView('login')}
