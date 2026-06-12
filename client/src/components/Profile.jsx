@@ -50,7 +50,7 @@ export default function Profile() {
             <User className="h-10 w-10" />
           </div>
           <CardTitle className="text-2xl font-bold">{profile?.username || 'User Profile'}</CardTitle>
-          <CardDescription>SecureTask SaaS Member</CardDescription>
+          <CardDescription>DeutschLingo Student</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6 pt-4">
           <div className="space-y-4">

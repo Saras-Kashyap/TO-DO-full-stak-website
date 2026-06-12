@@ -14,6 +14,27 @@ const TaskSchema = new mongoose.Schema({
   completed: {
     type: Boolean,
     default: false
+  },
+  // German Vocabulary Deck additions
+  german: {
+    type: String,
+    trim: true
+  },
+  english: {
+    type: String,
+    trim: true
+  },
+  category: {
+    type: String,
+    trim: true
+  },
+  exampleGerman: {
+    type: String,
+    trim: true
+  },
+  exampleEnglish: {
+    type: String,
+    trim: true
   }
 }, {
   timestamps: true

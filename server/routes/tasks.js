@@ -7,7 +7,7 @@ const Task = require('../models/Task');
 const mockTasks = [];
 
 // @route   GET api/tasks
-// @desc    Get all tasks for the logged-in user
+// @desc    Get all tasks/vocab cards for the logged-in user
 router.get('/', authMiddleware, async (req, res) => {
   if (global.useMockDB) {
     const userTasks = mockTasks
@@ -25,9 +25,9 @@ router.get('/', authMiddleware, async (req, res) => {
 });
 
 // @route   POST api/tasks
-// @desc    Create a new task for the logged-in user
+// @desc    Create a new task/vocab card for the logged-in user
 router.post('/', authMiddleware, async (req, res) => {
-  const { title } = req.body;
+  const { title, german, english, category, exampleGerman, exampleEnglish } = req.body;
   if (!title) {
     return res.status(400).json({ message: 'Title is required' });
   }
@@ -38,6 +38,11 @@ router.post('/', authMiddleware, async (req, res) => {
       owner: req.userId,
       title,
       completed: false,
+      german: german || '',
+      english: english || '',
+      category: category || '',
+      exampleGerman: exampleGerman || '',
+      exampleEnglish: exampleEnglish || '',
       createdAt: new Date().toISOString()
     };
     mockTasks.unshift(newTask);
@@ -47,7 +52,12 @@ router.post('/', authMiddleware, async (req, res) => {
   try {
     const newTask = new Task({
       title,
-      owner: req.userId
+      owner: req.userId,
+      german,
+      english,
+      category,
+      exampleGerman,
+      exampleEnglish
     });
     const task = await newTask.save();
     res.status(201).json(task);
@@ -57,18 +67,23 @@ router.post('/', authMiddleware, async (req, res) => {
 });
 
 // @route   PUT api/tasks/:id
-// @desc    Update a task belonging to the logged-in user
+// @desc    Update a task/vocab card belonging to the logged-in user
 router.put('/:id', authMiddleware, async (req, res) => {
-  const { title, completed } = req.body;
+  const { title, completed, german, english, category, exampleGerman, exampleEnglish } = req.body;
 
   if (global.useMockDB) {
     const task = mockTasks.find(t => t._id === req.params.id && t.owner === req.userId);
     if (!task) {
-      return res.status(404).json({ message: 'Task not found' });
+      return res.status(404).json({ message: 'Item not found' });
     }
 
     if (title !== undefined) task.title = title;
     if (completed !== undefined) task.completed = completed;
+    if (german !== undefined) task.german = german;
+    if (english !== undefined) task.english = english;
+    if (category !== undefined) task.category = category;
+    if (exampleGerman !== undefined) task.exampleGerman = exampleGerman;
+    if (exampleEnglish !== undefined) task.exampleEnglish = exampleEnglish;
     
     return res.json(task);
   }
@@ -76,11 +91,16 @@ router.put('/:id', authMiddleware, async (req, res) => {
   try {
     let task = await Task.findOne({ _id: req.params.id, owner: req.userId });
     if (!task) {
-      return res.status(404).json({ message: 'Task not found' });
+      return res.status(404).json({ message: 'Item not found' });
     }
 
     if (title !== undefined) task.title = title;
     if (completed !== undefined) task.completed = completed;
+    if (german !== undefined) task.german = german;
+    if (english !== undefined) task.english = english;
+    if (category !== undefined) task.category = category;
+    if (exampleGerman !== undefined) task.exampleGerman = exampleGerman;
+    if (exampleEnglish !== undefined) task.exampleEnglish = exampleEnglish;
 
     await task.save();
     res.json(task);
@@ -90,23 +110,23 @@ router.put('/:id', authMiddleware, async (req, res) => {
 });
 
 // @route   DELETE api/tasks/:id
-// @desc    Delete a task belonging to the logged-in user
+// @desc    Delete a task/vocab card belonging to the logged-in user
 router.delete('/:id', authMiddleware, async (req, res) => {
   if (global.useMockDB) {
     const index = mockTasks.findIndex(t => t._id === req.params.id && t.owner === req.userId);
     if (index === -1) {
-      return res.status(404).json({ message: 'Task not found' });
+      return res.status(404).json({ message: 'Item not found' });
     }
     mockTasks.splice(index, 1);
-    return res.json({ message: 'Task removed successfully' });
+    return res.json({ message: 'Item removed successfully' });
   }
 
   try {
     const task = await Task.findOneAndDelete({ _id: req.params.id, owner: req.userId });
     if (!task) {
-      return res.status(404).json({ message: 'Task not found' });
+      return res.status(404).json({ message: 'Item not found' });
     }
-    res.json({ message: 'Task removed' });
+    res.json({ message: 'Item removed' });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

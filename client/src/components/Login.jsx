@@ -31,7 +31,7 @@ const Login = ({ setToken, setView }) => {
     <div className="w-full max-w-md bg-slate-900/50 backdrop-blur-xl rounded-3xl p-12 shadow-2xl text-slate-200 transition-all duration-300">
       <div className="flex flex-col items-center text-center mb-8">
         <h2 className="text-3xl font-bold tracking-tight text-white">Welcome back</h2>
-        <p className="text-sm text-slate-400 mt-2">Sign in to your SecureTask account</p>
+        <p className="text-sm text-slate-400 mt-2">Sign in to your DeutschLingo account</p>
       </div>
 
       {error && (

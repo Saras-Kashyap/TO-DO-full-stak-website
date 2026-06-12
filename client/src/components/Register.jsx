@@ -31,7 +31,7 @@ const Register = ({ setToken, setView }) => {
     <div className="w-full max-w-md bg-white/5 backdrop-blur-lg border border-white/5 rounded-3xl p-10 shadow-[0_25px_60px_rgba(99,102,241,0.08)] text-slate-200 transition-all duration-300">
       <div className="flex flex-col items-center text-center mb-8">
         <h2 className="text-3xl font-extrabold tracking-tight text-white">Create Account</h2>
-        <p className="text-sm text-slate-400 mt-2">Join SecureTask to start managing tasks</p>
+        <p className="text-sm text-slate-400 mt-2">Join DeutschLingo to start learning German</p>
       </div>
 
       {error && (

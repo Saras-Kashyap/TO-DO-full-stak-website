@@ -480,3 +480,17 @@ body {
   25% { transform: translateX(-6px); }
   75% { transform: translateX(6px); }
 }
+
+/* 3D Flashcard Flip Animations */
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
